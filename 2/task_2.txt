@@ -1,0 +1,8 @@
+The task is known in robotics as forward kinematics. 
+
+To calculate the distance between the origin of the coordinate system to the measured point we can use 3D vectors. Each calculated vector represents the distance between subsequent specific points of links in the robotic manipulator. The current configuration of the manipulator is often described by Danevit-Hartenberg parameters. The aim is to calculate the vector from base to the tool center point (TCP). The searched vector is the base-TCP vector added to the vector which represents the distance measured by the sensor. When the norm of the resulting vector is calculated we will obtain the distance from the base to the measured point. 
+
+The calculation of every vector is dependent on the angle in previous joints. The calculation should be as follows:
+distance = |r_0 + r_1 * R^1_0 + ... + r_6 * R^6_0 + r_sensor * R^7_0|
+where 
+R^i_j is a rotation matrix which transforms vectors from the i coordinate system to the j coordinate system. 

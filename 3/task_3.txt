@@ -1,0 +1,3 @@
+Best method for broadcasting sensor data is using ROS topics. This method is meant to stream continuous data and broadcasting is dependent only on the sensor node. 
+
+For sharing low latency mathematical function capabilities we should use services. They should be used for fast tasks that require specific data. 

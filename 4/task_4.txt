@@ -1,0 +1,4 @@
+Operation should return value 128. The reason for this behavior is overflow of the char variable. Char always stores 1 byte of data (can encode 2^8=256 symbols). The right side of the assignment operator is too big to fit in char. The multiplication and overflow can be interpreted as follows:
+' ' * 12 = 32 * 12 = 384
+384 - 256 = 128
+32 is the value of space in the ASCII table. 
